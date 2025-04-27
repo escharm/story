@@ -1,0 +1,41 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "paths": {
+      "@escharm/layout-react": ["../../packages/layout-react/src"],
+      "@escharm/layout-core": ["../../packages/layout-core/src"],
+      "@escharm/portal-window": ["../../packages/portal-window/src"],
+      "@escharm/dnd-react": ["../../packages/dnd-react/src"],
+      "@escharm/sns-react": ["../../packages/sns-react/src"],
+      "@escharm/sns-core": ["../../packages/sns-core/src"],
+      "@escharm/dnd-core": ["../../packages/dnd-core/src"]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../../packages/dnd-core"
+    },
+    {
+      "path": "../../packages/sns-core"
+    },
+    {
+      "path": "../../packages/sns-react"
+    },
+    {
+      "path": "../../packages/dnd-react"
+    },
+    {
+      "path": "../../packages/portal-window"
+    },
+    {
+      "path": "../../packages/layout-core"
+    },
+    {
+      "path": "../../packages/layout-react"
+    }
+  ]
+}

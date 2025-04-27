@@ -1,0 +1,234 @@
+{
+  "stories": {
+    "autoCreate": {
+      "name": "autoCreate",
+      "data": {
+        "a": "TSStringKeyword"
+      },
+      "group": {
+        "selectedHierarchyIds": [],
+        "selectedRects": {},
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "manualData": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      },
+      "styledContainer": {}
+    }
+  },
+  "hierarchies": {
+    "fsPaj5-kNsf_7i8x5epBh": {
+      "id": "fsPaj5-kNsf_7i8x5epBh",
+      "name": "div",
+      "childIds": [
+        "STCk7M0uEPB1LaCSPa8-c",
+        "EroN_y3dPjT4zusNpJ4pn",
+        "OQnnN0yu288qLrafAvL9F",
+        "SubTest"
+      ],
+      "parentId": null,
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    },
+    "STCk7M0uEPB1LaCSPa8-c": {
+      "id": "STCk7M0uEPB1LaCSPa8-c",
+      "name": "p",
+      "childIds": [],
+      "parentId": "fsPaj5-kNsf_7i8x5epBh",
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    },
+    "EroN_y3dPjT4zusNpJ4pn": {
+      "id": "EroN_y3dPjT4zusNpJ4pn",
+      "name": "button",
+      "childIds": [],
+      "parentId": "fsPaj5-kNsf_7i8x5epBh",
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    },
+    "OQnnN0yu288qLrafAvL9F": {
+      "id": "OQnnN0yu288qLrafAvL9F",
+      "name": "div",
+      "childIds": ["EA2dX2fKmd8PqOJn1PpJx"],
+      "parentId": "fsPaj5-kNsf_7i8x5epBh",
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    },
+    "EA2dX2fKmd8PqOJn1PpJx": {
+      "id": "EA2dX2fKmd8PqOJn1PpJx",
+      "name": "span",
+      "childIds": [],
+      "parentId": "OQnnN0yu288qLrafAvL9F",
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    },
+    "SubTest": {
+      "id": "SubTest",
+      "name": "SubTest",
+      "childIds": [],
+      "parentId": "fsPaj5-kNsf_7i8x5epBh",
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "stories": {
+    "autoCreate": {
+      "name": "autoCreate",
+      "data": {},
+      "group": {
+        "selectedHierarchyIds": [],
+        "selectedRects": {},
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "manualData": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    }
+  },
+  "hierarchies": {
+    "7DKDCwBwom9bvm9Ebsj_P": {
+      "id": "7DKDCwBwom9bvm9Ebsj_P",
+      "name": "div",
+      "childIds": [],
+      "parentId": null,
+      "originData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "updateData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      },
+      "manualData": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "style": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "repository": "git@github.com:escharm/escharm.git",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "lerna": "^8.2.1",
+    "lodash": "^4.17.21",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "packageManager": "yarn@4.5.3"
+}
