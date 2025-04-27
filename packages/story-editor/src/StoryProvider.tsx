@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import type React from "react";
 import { createContext } from "react";
 import { proxy } from "valtio";
 
-import { IGroup, IStoryContext, IUpdateTWStyleParams } from "./types";
+import type { IGroup, IStoryContext, IUpdateTWStyleParams } from "./types.ts";
 
 const createDefaultData = (): IStoryContext => {
   const hierarchies = {};
@@ -32,7 +33,7 @@ interface IProps {
 const StoryProvider = (props: IProps) => {
   const { children } = props;
   const defaultValueRef = useRef<IStoryContext>(createDefaultData());
-  const styleRef = useRef<HTMLStyleElement>(null);
+  const styleRef = useRef<HTMLStyleElement>();
 
   useEffect(() => {}, []);
 
@@ -65,7 +66,7 @@ const StoryProvider = (props: IProps) => {
 
   useEffect(() => {
     import.meta.hot?.send("LOAD_STORY_CONTEXT", {
-      search: window.location.search,
+      search: globalThis.location.search,
     });
   }, []);
 

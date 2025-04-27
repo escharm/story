@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { PluginOption } from "vite";
 
-import { IPluginParams } from "../types";
-import { getFixturesPath } from "../utils";
-import { getProps } from "./getProps";
-import defaultHomeTemplate from "./homeTemplate";
+import { getFixturesPath } from "../utils.ts";
+import { getProps } from "./getProps.ts";
+import defaultHomeTemplate from "./homeTemplate.ts";
+import { IPluginParams } from "../../../story-editor/src/types.ts";
 
 export const vueStoryPlugin = (params?: IPluginParams): PluginOption => {
   const defaultStaticPathPrefix = "/static";

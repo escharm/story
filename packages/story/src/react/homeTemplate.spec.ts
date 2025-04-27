@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import homeTemplate from "./homeTemplate";
+import homeTemplate from "./homeTemplate.ts";
 
 describe("homeTemplate", () => {
   it("should generate correct template with mock data", () => {

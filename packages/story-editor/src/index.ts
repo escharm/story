@@ -1,2 +1,2 @@
-export { default as App } from "./App";
-export * from "./types";
+export { default as App } from "./App.tsx";
+export * from "./types.ts";

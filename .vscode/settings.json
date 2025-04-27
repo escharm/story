@@ -7,5 +7,6 @@
       "mode": "auto"
     }
   ],
-  "reactSnippets.settings.importReactOnTop": false
+  "reactSnippets.settings.importReactOnTop": false,
+  "deno.enable": true
 }

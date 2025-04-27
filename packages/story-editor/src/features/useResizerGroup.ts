@@ -1,20 +1,20 @@
 import { useDrag } from "@use-gesture/react";
 import { calc } from "@vanilla-extract/css-utils";
-import { CSSProperties, useContext, useEffect, useMemo } from "react";
+import { type CSSProperties, useContext, useEffect, useMemo } from "react";
 
 import {
   useGroup,
   useResizers,
   useSelectedHierarchyIds,
   useSelectedResizers,
-} from "../hierarchy";
-import { StoryContext } from "../StoryProvider";
-import { IRect } from "../types";
+} from "../hierarchy.ts";
+import { StoryContext } from "../StoryProvider.tsx";
+import type { IRect } from "../types.ts";
 import {
   useAnimationEffect,
   useRequestAnimationFrame,
-} from "../useAnimationEffect";
-import { useSketchpadMode } from "../store";
+} from "../useAnimationEffect.ts";
+import { useSketchpadMode } from "../store.ts";
 
 export const useTopLeftResizer = () => {
   const storyProxy = useContext(StoryContext);

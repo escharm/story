@@ -1,14 +1,14 @@
 import { useCallback, useContext, useMemo } from "react";
 import { proxy, useSnapshot, ref } from "valtio";
 
-import {
+import type {
   IFlatHierarchy,
   IFlatStructure,
   IHierarchy,
   IRect,
   IResizer,
-} from "./types";
-import { StoryContext } from "./StoryProvider";
+} from "./types.ts";
+import { StoryContext } from "./StoryProvider.tsx";
 
 export const useStory = () => {
   const storyProxy = useContext(StoryContext);

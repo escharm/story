@@ -1,8 +1,8 @@
-import { ReactNode, useMemo, useRef, useState } from "react";
+import { type ReactNode, useMemo, useRef, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { nanoid } from "nanoid";
 
-import { panelProxy, useSelectedPanel } from "../store";
+import { panelProxy, useSelectedPanel } from "../store.ts";
 
 interface PanelProps {
   title: string;

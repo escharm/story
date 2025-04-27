@@ -1,12 +1,12 @@
-import { ISaveHierarchyParams } from "@escharm/story-editor";
+import type { ISaveHierarchyParams } from "@escharm/story-editor";
 import { Instrumentation } from "@tailwindcss/node";
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { ViteDevServer } from "vite";
 
-import { updateHtmlTagClassNames } from "./htmlMatcher";
-import DefaultMap from "./TWDefaultMap";
-import Root from "./TWRoot";
+import { updateHtmlTagClassNames } from "./htmlMatcher.ts";
+import DefaultMap from "./TWDefaultMap.ts";
+import Root from "./TWRoot.ts";
 
 export const saveHierarchyChange =
   (

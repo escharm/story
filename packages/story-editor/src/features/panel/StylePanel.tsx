@@ -1,10 +1,10 @@
-import { useSelectedHierarchies } from "../../hierarchy";
-import { Panel } from "../../components/Panel";
-import { SingleElementStylePanel } from "../SingleElementStylePanel";
-import { MultiElementStylePanel } from "../MultiElementStylePanel";
-import Button from "../../components/Button";
-import { saveHierarchyChange } from "../../utils/saveHierarchyChange";
-import { useSketchpadMode, useToggleSketchpadMode } from "../../store";
+import { useSelectedHierarchies } from "../../hierarchy.ts";
+import { Panel } from "../../components/Panel.tsx";
+import { SingleElementStylePanel } from "../SingleElementStylePanel.tsx";
+import { MultiElementStylePanel } from "../MultiElementStylePanel.tsx";
+import Button from "../../components/Button.tsx";
+import { saveHierarchyChange } from "../../utils/saveHierarchyChange.ts";
+import { useSketchpadMode, useToggleSketchpadMode } from "../../store.ts";
 
 const StylePanel = () => {
   const selectedHierarchies = useSelectedHierarchies();

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useSnapshot } from "valtio";
 
-import { StoryContext } from "../../StoryProvider";
-import { Panel } from "../../components/Panel";
+import { StoryContext } from "../../StoryProvider.tsx";
+import { Panel } from "../../components/Panel.tsx";
 
 const StorySelector: React.FC = () => {
   const storyProxy = useContext(StoryContext);

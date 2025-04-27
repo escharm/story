@@ -1,6 +1,7 @@
-import { PropsWithChildren, useContext } from "react";
+import { type PropsWithChildren, useContext } from "react";
 import { useSnapshot } from "valtio";
-import { StoryContext } from "../StoryProvider";
+import { StoryContext } from "../StoryProvider.tsx";
+
 interface IProps {}
 
 const StyledContainer = (props: PropsWithChildren<IProps>) => {

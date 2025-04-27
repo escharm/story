@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useStory } from "../hierarchy";
-import StyledContainer from "./StyledContainer";
+import { useStory } from "../hierarchy.ts";
+import StyledContainer from "./StyledContainer.tsx";
 
 const ComponentTemplate = () => {
   const urlSearchParams = new URLSearchParams(window.location.search);

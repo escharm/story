@@ -1,0 +1,26 @@
+{
+  "name": "@escharm/story-editor",
+  "version": "0.1.0",
+  "license": "MIT",
+  "tasks": {
+    "test": "deno test",
+    "dev": "deno run -A --node-modules-dir npm:vite",
+    "build": "deno bundle src/index.ts dist/index.js",
+    "typings": "deno types > dist/index.d.ts",
+    "prepack": "rm -rf dist && deno task typings && deno task build"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "types": [],
+    "strict": true,
+    "jsx": "react-jsx"
+  },
+  "lint": {
+    "rules": {
+      "tags": ["jsr"]
+    }
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

@@ -4,13 +4,13 @@ import {
   useHierarchies,
   useSelectedHierarchyIds,
   useSelectHierarchy,
-} from "../hierarchy";
+} from "../hierarchy.ts";
 import {
   useListenSketchpadMode,
   useResizerGroup,
   useSyncElements,
-} from "./useResizerGroup";
-import { useSketchpadMode } from "../store";
+} from "./useResizerGroup.ts";
+import { useSketchpadMode } from "../store.ts";
 
 const GroupResizer = () => {
   const {

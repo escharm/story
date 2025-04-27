@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { addDataIdToHtmlTags, updateHtmlTagClassNames } from "./htmlMatcher";
+import { addDataIdToHtmlTags, updateHtmlTagClassNames } from "./htmlMatcher.ts";
 
 // Mock nanoid to return sequential IDs
 vi.mock("nanoid", () => {

@@ -1,6 +1,6 @@
 import { parseSync, traverse } from "@babel/core";
 import * as t from "@babel/types";
-import { IFlatHierarchy, IHierarchy } from "@escharm/story-editor";
+import type { IFlatHierarchy, IHierarchy } from "@escharm/story-editor";
 
 function createHierarchy(
   node: t.JSXElement,

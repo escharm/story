@@ -1,5 +1,4 @@
-import React from "react";
-import { IHierarchy } from "../types";
+import { IHierarchy } from "../types.ts";
 
 interface MultiElementStylePanelProps {
   hierarchies: IHierarchy[];

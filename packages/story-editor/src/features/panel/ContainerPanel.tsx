@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { Panel } from "../../components/Panel";
-import { StoryContext } from "../../StoryProvider";
+import { useContext } from "react";
+import { Panel } from "../../components/Panel.tsx";
+import { StoryContext } from "../../StoryProvider.tsx";
 
 const ContainerPanel = () => {
   const storyProxy = useContext(StoryContext);

@@ -1,11 +1,13 @@
 import tailwindcss from "@tailwindcss/vite";
-import path from "path";
+import path from "node:path";
 import { defineConfig } from "vite";
+import deno from "@deno/vite-plugin";
 
-import { reactStoryPlugin } from "./src/react";
+import { reactStoryPlugin } from "./src/react/index.ts";
 
 export default defineConfig({
   plugins: [
+    deno(),
     tailwindcss(),
     reactStoryPlugin({
       staticPath: {

@@ -1,6 +1,6 @@
-import { IFixture, IPluginParams } from "@escharm/story-editor";
-import fs from "fs";
-import path from "path";
+import type { IFixture, IPluginParams } from "@escharm/story-editor";
+import fs from "node:fs";
+import path from "node:path";
 import {
   PluginOption,
   ResolvedConfig,
@@ -8,14 +8,14 @@ import {
   ViteDevServer,
 } from "vite";
 
-import { getFixturesPath } from "../utils";
-import { initTWSTyle, saveHierarchyChange } from "./eventHandlers";
-import { getProps } from "./getProps";
-import defaultHomeTemplate from "./homeTemplate";
-import { addDataIdToHtmlTags } from "./htmlMatcher";
-import { parseToHierarchy } from "./parseToHierarchy";
-import DefaultMap from "./TWDefaultMap";
-import Root from "./TWRoot";
+import { getFixturesPath } from "../utils.ts";
+import { initTWSTyle, saveHierarchyChange } from "./eventHandlers.ts";
+import { getProps } from "./getProps.ts";
+import defaultHomeTemplate from "./homeTemplate.ts";
+import { addDataIdToHtmlTags } from "./htmlMatcher.ts";
+import { parseToHierarchy } from "./parseToHierarchy.ts";
+import DefaultMap from "./TWDefaultMap.ts";
+import Root from "./TWRoot.ts";
 
 // tailwindcss
 

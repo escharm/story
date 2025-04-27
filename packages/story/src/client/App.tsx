@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Test from "./Test";
+import Test from "./Test.tsx";
 
 const App = () => {
   return (

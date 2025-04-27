@@ -2,11 +2,11 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import { useContext, useState } from "react";
 import { useSnapshot } from "valtio";
 
-import { IFlatHierarchy, IHierarchy } from "../../types";
-import { useSelectedHierarchyIds } from "../../hierarchy";
-import { useSelectHierarchy } from "../../hierarchy";
-import { StoryContext } from "../../StoryProvider";
-import { Panel } from "../../components/Panel";
+import { IFlatHierarchy, IHierarchy } from "../../types.ts";
+import { useSelectedHierarchyIds } from "../../hierarchy.ts";
+import { useSelectHierarchy } from "../../hierarchy.ts";
+import { StoryContext } from "../../StoryProvider.tsx";
+import { Panel } from "../../components/Panel.tsx";
 
 interface IProps {
   item: IHierarchy;

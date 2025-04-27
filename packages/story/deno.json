@@ -1,0 +1,27 @@
+{
+  "name": "@escharm/story",
+  "version": "0.1.0",
+  "license": "MIT",
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "jsx": "react-jsx"
+  },
+  "tasks": {
+    "dev": "deno run -A --node-modules-dir npm:vite",
+    "test": "deno test",
+    "build": "deno bundle src/index.ts dist/index.js",
+    "typings": "deno types > dist/index.d.ts",
+    "prepack": "rm -rf dist && deno task typings && deno task build",
+    "generate:dev": "openssl req -x509 -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' -addext 'subjectAltName = DNS.1:localhost' -keyout server.key -out server.crt"
+  },
+  "lint": {
+    "rules": {
+      "tags": ["jsr", "jsx"]
+    }
+  },
+  "exports": {
+    "./react": "./src/react/index.ts",
+    "./vue": "./src/vue/index.ts"
+  }
+}

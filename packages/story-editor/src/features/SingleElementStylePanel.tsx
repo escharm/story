@@ -1,4 +1,4 @@
-import { useHierarchies, useResizers } from "../hierarchy";
+import { useHierarchies, useResizers } from "../hierarchy.ts";
 
 interface IProps {
   selectedHierarchyId: string;

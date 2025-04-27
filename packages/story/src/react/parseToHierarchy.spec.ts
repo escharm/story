@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { parseToHierarchy } from "./parseToHierarchy";
+import { parseToHierarchy } from "./parseToHierarchy.ts";
 
 describe("parseToHierarchy", () => {
   it("should parse component to hierarchy", () => {

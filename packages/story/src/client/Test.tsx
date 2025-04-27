@@ -1,4 +1,4 @@
-import SubTest from "./SubTest";
+import SubTest from "./SubTest.tsx";
 
 interface IProps {
   a: string;
