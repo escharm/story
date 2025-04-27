@@ -2,13 +2,22 @@ import fsPromise from "node:fs/promises";
 
 import {
   compile,
-  Features,
   type Instrumentation,
   normalizePath,
 } from "@tailwindcss/node";
 import { clearRequireCache } from "@tailwindcss/node/require-cache";
 import { Scanner } from "@tailwindcss/oxide";
 import path from "node:path";
+
+enum Features {
+  None = 0,
+  AtApply = 1,
+  AtImport = 2,
+  JsPluginCompat = 4,
+  ThemeFunction = 8,
+  Utilities = 16,
+  Variants = 32,
+}
 
 export function idToPath(id: string) {
   return path.resolve(id.replace(/\?.*$/, ""));
