@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   variant = "flat",
   size = "medium",
+  disabled = false,
   ...props
 }) => {
   // 基础样式
@@ -59,11 +60,20 @@ const Button: React.FC<ButtonProps> = ({
     ...baseStyle,
     ...variantStyles[variant],
     ...sizeStyles[size],
+    ...(disabled
+      ? {
+          backgroundColor: "#f5f5f5",
+          color: "#bfbfbf",
+          cursor: "not-allowed",
+          border: "1px solid #e0e0e0",
+          opacity: 0.7,
+        }
+      : {}),
     ...props.style,
   };
 
   return (
-    <button {...props} style={style}>
+    <button {...props} style={style} disabled={disabled}>
       {children}
     </button>
   );

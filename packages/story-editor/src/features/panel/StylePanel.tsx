@@ -12,8 +12,21 @@ const StylePanel = () => {
   const sketchpadMode = useSketchpadMode();
   const toggleSketchpadMode = useToggleSketchpadMode();
   return (
-    <Panel title="样式面板" position="right" defaultCollapsed={false} top={100}>
-      {selectedHierarchy && (
+    <Panel
+      title="样式面板"
+      position="right"
+      defaultCollapsed={false}
+      top={100}
+      style={{ width: "256px" }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 12,
+          marginBottom: 16,
+        }}
+      >
         <Button
           onClick={() => {
             console.log(window.location.search);
@@ -22,20 +35,34 @@ const StylePanel = () => {
               hierarchy: selectedHierarchies[0],
             });
           }}
+          style={{
+            width: "100%",
+            marginBottom: 4,
+          }}
+          disabled={!selectedHierarchy}
         >
           保存
         </Button>
-      )}
-      <h4>画板模式</h4>
-      <input
-        type="checkbox"
-        checked={sketchpadMode}
-        name=""
-        id=""
-        onChange={() => {
-          toggleSketchpadMode();
-        }}
-      />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <h4 style={{ margin: 0, fontWeight: 500, fontSize: 15 }}>画板模式</h4>
+          <input
+            type="checkbox"
+            checked={sketchpadMode}
+            name=""
+            id=""
+            onChange={() => {
+              toggleSketchpadMode();
+            }}
+            style={{ margin: 0 }}
+          />
+        </div>
+      </div>
       {selectedHierarchies.length === 0 ? (
         <div>请选择一个元素</div>
       ) : selectedHierarchies.length === 1 ? (

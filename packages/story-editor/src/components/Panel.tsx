@@ -10,10 +10,18 @@ interface PanelProps {
   position: "left" | "right";
   top?: number;
   defaultCollapsed?: boolean;
+  style?: React.CSSProperties; // 新增
 }
 
 export const Panel = (props: PanelProps) => {
-  const { top, title, children, position, defaultCollapsed = false } = props;
+  const {
+    top,
+    title,
+    children,
+    position,
+    defaultCollapsed = false,
+    style,
+  } = props;
 
   const panelIdRef = useRef(nanoid());
   const selectedPanel = useSelectedPanel();
@@ -45,6 +53,7 @@ export const Panel = (props: PanelProps) => {
           : "translateX(0)",
         transition: "transform 0.2s ease",
         zIndex: currentSelected ? 100 : "auto",
+        ...style, // 合并外部传入的 style
       }}
     >
       <div
