@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "license": "MIT",
   "compilerOptions": {
-    "lib": ["dom", "esnext"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "strict": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "jsxImportSourceTypes": "@types/react"
   },
   "tasks": {
     "dev": "deno run -A --node-modules-dir npm:vite",

@@ -1,0 +1,29 @@
+{
+  "stories": {
+    "autoCreate": {
+      "name": "autoCreate",
+      "data": {
+        "a": "TSStringKeyword"
+      },
+      "group": {
+        "selectedHierarchyIds": [],
+        "selectedRects": {},
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "manualData": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      },
+      "styledContainer": {}
+    }
+  }
+}
