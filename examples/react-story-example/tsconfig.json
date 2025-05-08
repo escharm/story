@@ -1,11 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "module": "es2022",
     "outDir": "dist",
     "paths": {
       "@escharm/story": ["../../packages/story/src"]
     },
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler"
   },
   "include": ["src", "vite.config.ts"],
   "exclude": ["node_modules"],
