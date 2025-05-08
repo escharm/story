@@ -8,6 +8,7 @@ import StoryProvider from "./StoryProvider.tsx";
 import StorySelector from "./features/panel/StorySelector.tsx";
 import StylePanel from "./features/panel/StylePanel.tsx";
 import ContainerPanel from "./features/panel/ContainerPanel.tsx";
+import { Suspense } from "react";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <ContainerPanel />
       <Capture>
         <ComponentTemplate />
+        <Suspense fallback={<p>⌛Downloading message...</p>}></Suspense>
       </Capture>
       <GroupResizer />
     </StoryProvider>

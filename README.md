@@ -1,21 +1,6 @@
-# 编辑器工作流程
+# escharm/story
 
-1. 访问 preview 地址
-2. 通过开发服务器，加载代码
-   - 读取原始代码，增加 data-id 到普通 tag
-     - 使用正则处理
-   - 编译代码为 ast
-     - 解析组件 props
-     - 创建 mock 数据
-     - 生成组件层级数据
-   - 拼装新的组件
-     - 捕获器。
-       - 代理点击事件，获取点击的对象。但不触发目标的点击事件
-     - 展示正常的组件
-     - 选择器
-       - 从网页中获取元素大小
-       - 标记用户选中的元素
-     - 目录
-       - 加载组件层级数据
-     - 工具栏
-       - 增加新的结构
+ESCharm Story is a Tool for Component Development/Preview
+
+## Quick Start
+
