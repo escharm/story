@@ -83,11 +83,8 @@ export const useSelectHierarchy = () => {
         | HTMLElement
         | undefined;
 
-      if (!resizerProxy.originNode) {
-        const targegtNode = element?.cloneNode(false);
-        if (targegtNode) {
-          resizerProxy.originNode = ref(targegtNode);
-        }
+      if (!resizerProxy.originStyleText) {
+        resizerProxy.originStyleText = element?.style.cssText;
       }
 
       if (element?.style) {

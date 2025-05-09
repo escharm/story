@@ -49,7 +49,7 @@ export interface ISaveHierarchyParams {
 
 export interface IResizer {
   id: string;
-  originNode?: Node | null;
+  originStyleText?: string | null;
   syncedRect?: IRect | null;
   syncedStyle?: Record<string, string> | null;
 }

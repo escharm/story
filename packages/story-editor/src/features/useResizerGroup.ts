@@ -352,20 +352,8 @@ export const useListenSketchpadMode = () => {
       const element = document.querySelector(`[data-id="${resizer.id}"]`) as
         | HTMLElement
         | undefined;
-
-      if (resizer.originNode != null && sketchpadMode === false) {
-        const children = element?.childNodes;
-
-        if (children && resizer.originNode) {
-          const clonedNode = resizer.originNode.cloneNode(false);
-          // 将所有子节点移动到克隆节点下
-          while (children.length > 0) {
-            clonedNode.appendChild(children[0]);
-          }
-          // 用克隆节点替换原来的 element
-          element?.replaceWith(clonedNode);
-        }
-        return;
+      if (element && sketchpadMode === false) {
+        element.style = resizer.originStyleText ?? "";
       }
     });
   }, [resizers, sketchpadMode]);
