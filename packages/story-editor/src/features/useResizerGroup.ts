@@ -7,6 +7,7 @@ import {
   useResizers,
   useSelectedHierarchyIds,
   useSelectedResizers,
+  useUpdateGroupResizer,
 } from "../hierarchy";
 import { StoryContext } from "../StoryProvider";
 import { IRect } from "../types";
@@ -242,6 +243,7 @@ export const useSyncElements = () => {
   const resizers = useResizers();
   const storyProxy = useContext(StoryContext);
   const sketchpadMode = useSketchpadMode();
+  const updateGroupResizer = useUpdateGroupResizer();
 
   useRequestAnimationFrame(() => {
     if (!sketchpadMode) {
@@ -307,27 +309,7 @@ export const useSyncElements = () => {
         rects.push(updateRect);
       }
     });
-
-    if (rects.length > 0) {
-      let minX = Infinity;
-      let minY = Infinity;
-      let maxX = -Infinity;
-      let maxY = -Infinity;
-
-      rects.forEach((rect) => {
-        minX = Math.min(minX, rect.x);
-        minY = Math.min(minY, rect.y);
-        maxX = Math.max(maxX, rect.x + rect.width);
-        maxY = Math.max(maxY, rect.y + rect.height);
-      });
-
-      if (storyProxy.group.syncedRect) {
-        storyProxy.group.syncedRect.x = minX;
-        storyProxy.group.syncedRect.y = minY;
-        storyProxy.group.syncedRect.width = maxX - minX;
-        storyProxy.group.syncedRect.height = maxY - minY;
-      }
-    }
+    updateGroupResizer(rects);
   });
 };
 
@@ -335,26 +317,45 @@ export const useListenSketchpadMode = () => {
   const storyProxy = useContext(StoryContext);
   const sketchpadMode = useSketchpadMode();
   const resizers = useResizers();
+  const updateGroupResizer = useUpdateGroupResizer();
+  const selectedHierarchyIds = useSelectedHierarchyIds();
 
   useEffect(() => {
     Object.values(storyProxy.resizers).forEach((resizer) => {
       if (!sketchpadMode && resizer) {
         resizer.syncedRect = null;
+        storyProxy.group.selectedHierarchyIds = [];
       }
     });
   }, [storyProxy.resizers, sketchpadMode]);
 
   useAnimationEffect(() => {
-    Object.values(resizers).forEach((resizer) => {
-      if (resizer == null) {
+    const rects: IRect[] = [];
+
+    Object.values(resizers).forEach((resizerProxy) => {
+      if (resizerProxy == null) {
         return;
       }
-      const element = document.querySelector(`[data-id="${resizer.id}"]`) as
-        | HTMLElement
-        | undefined;
+      const element = document.querySelector(
+        `[data-id="${resizerProxy.id}"]`,
+      ) as HTMLElement | undefined;
       if (element && sketchpadMode === false) {
-        element.style = resizer.originStyleText ?? "";
+        element.style = resizerProxy.originStyleText ?? "";
       }
     });
+
+    selectedHierarchyIds.forEach((hierarchyId) => {
+      const resizerProxy = storyProxy.resizers[hierarchyId];
+      if (resizerProxy == null) {
+        return;
+      }
+      const element = document.querySelector(
+        `[data-id="${resizerProxy.id}"]`,
+      ) as HTMLElement | undefined;
+      const rect = element?.getBoundingClientRect() as IRect;
+      rects.push(rect);
+    });
+
+    updateGroupResizer(rects);
   }, [resizers, sketchpadMode]);
 };

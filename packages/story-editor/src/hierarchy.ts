@@ -55,6 +55,7 @@ export function useHierarchy(id: string | undefined): Partial<IHierarchy> {
 
 export const useSelectHierarchy = () => {
   const storyProxy = useContext(StoryContext);
+  const updateGroupResizer = useUpdateGroupResizer();
 
   const selectedHierarchy = useCallback(
     (hierarchyId: string) => {
@@ -83,7 +84,7 @@ export const useSelectHierarchy = () => {
         | HTMLElement
         | undefined;
 
-      if (!resizerProxy.originStyleText) {
+      if (resizerProxy.originStyleText == null) {
         resizerProxy.originStyleText = element?.style.cssText;
       }
 
@@ -96,33 +97,7 @@ export const useSelectHierarchy = () => {
           resizerProxy.syncedStyle[propertyName] = propertyValue;
         }
       }
-      if (rects.length > 0) {
-        let minX = Infinity;
-        let minY = Infinity;
-        let maxX = -Infinity;
-        let maxY = -Infinity;
-
-        rects.forEach((rect) => {
-          minX = Math.min(minX, rect.x);
-          minY = Math.min(minY, rect.y);
-          maxX = Math.max(maxX, rect.x + rect.width);
-          maxY = Math.max(maxY, rect.y + rect.height);
-        });
-
-        if (storyProxy.group.syncedRect) {
-          storyProxy.group.syncedRect.x = minX;
-          storyProxy.group.syncedRect.y = minY;
-          storyProxy.group.syncedRect.width = maxX - minX;
-          storyProxy.group.syncedRect.height = maxY - minY;
-        } else {
-          storyProxy.group.syncedRect = {
-            x: minX,
-            y: minY,
-            width: maxX - minX,
-            height: maxY - minY,
-          };
-        }
-      }
+      updateGroupResizer(rects);
     },
     [storyProxy],
   );
@@ -186,4 +161,38 @@ export const useCleanSelectedHierarchy = () => {
     storyProxy.group.selectedRects = {};
     storyProxy.group.syncedRect = null;
   }, [storyProxy]);
+};
+
+export const useUpdateGroupResizer = () => {
+  const storyProxy = useContext(StoryContext);
+
+  return useCallback((rects: IRect[]) => {
+    if (rects.length > 0) {
+      let minX = Infinity;
+      let minY = Infinity;
+      let maxX = -Infinity;
+      let maxY = -Infinity;
+
+      rects.forEach((rect) => {
+        minX = Math.min(minX, rect.x);
+        minY = Math.min(minY, rect.y);
+        maxX = Math.max(maxX, rect.x + rect.width);
+        maxY = Math.max(maxY, rect.y + rect.height);
+      });
+
+      if (storyProxy.group.syncedRect) {
+        storyProxy.group.syncedRect.x = minX;
+        storyProxy.group.syncedRect.y = minY;
+        storyProxy.group.syncedRect.width = maxX - minX;
+        storyProxy.group.syncedRect.height = maxY - minY;
+      } else {
+        storyProxy.group.syncedRect = {
+          x: minX,
+          y: minY,
+          width: maxX - minX,
+          height: maxY - minY,
+        };
+      }
+    }
+  }, []);
 };
