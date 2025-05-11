@@ -3,6 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { nanoid } from "nanoid";
 
 import { panelProxy, useSelectedPanel } from "../store";
+import Card from "./Card";
 
 interface PanelProps {
   title: string;
@@ -37,15 +38,12 @@ export const Panel = (props: PanelProps) => {
   }, [selectedPanel]);
 
   return (
-    <div
+    <Card
       style={{
         position: "fixed",
         top: top ?? "16px",
         [position]: "16px",
         backgroundColor: "white",
-        padding: "16px",
-        borderRadius: "8px",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
         maxHeight: "80vh",
         overflowY: "auto",
         transform: isCollapsed
@@ -79,6 +77,6 @@ export const Panel = (props: PanelProps) => {
         </span>
       </div>
       {!isCollapsed && children}
-    </div>
+    </Card>
   );
 };

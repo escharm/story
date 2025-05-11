@@ -8,10 +8,14 @@ import StoryProvider from "./StoryProvider";
 import StorySelector from "./features/panel/StorySelector";
 import StylePanel from "./features/panel/StylePanel";
 import ContainerPanel from "./features/panel/ContainerPanel";
+import TopToolbar from "./features/Toolbar/TopToolbar";
+import BottomToolbar from "./features/Toolbar/BottomToolbar";
 
 const App = () => {
   return (
     <StoryProvider>
+      <TopToolbar />
+      <BottomToolbar />
       <HierarchyPanel />
       <StorySelector />
       <StylePanel />
